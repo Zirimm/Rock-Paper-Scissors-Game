@@ -1,0 +1,118 @@
+/******************************************************************************
+Chelsea Ogbede
+Programming Fundamentals
+1336
+10/11/2022
+*******************************************************************************/
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{   //randomizer 
+    int choice;
+    srand(time(NULL));
+    int random = (rand() % 3) + 1;
+    const int ROCK = 1;
+    const int PAPER = 2;
+    const int SCISSORS = 3;
+    int play_again = 1;
+    int endplay_again = 3;
+    
+    //while (play_again == 1);
+    
+    
+    //menu options//
+    cout<< "Pick one of the following:\n";
+    cout<< "1. Rock\n";
+    cout<< "2. Paper\n";
+    cout<< "3. Scissors\n";
+    cout<< endl;
+    
+    cin>> choice;
+    if ((choice > 3) || (choice <1)) {
+        cout<< endl;
+        cout<<"ERROR! You must pick one of the menu options\n";
+    }
+    
+    else if (choice >=1) {
+        cout<< random << endl;
+    }
+    
+    
+    while ((random == 1) && (choice == 1)) {
+        cout<< "Player chose: ROCK\n";
+        cout<< "computer chose: ROCK\n";
+        cout<< "It's a tie! Play again!\n";
+        cin>> choice;
+        play_again++;
+        std::cout<< play_again << endl;
+    }
+    
+    if ((random == 1) && (choice == 2)) {
+        cout<< "Player chose: PAPER\n";
+        cout<< "computer chose: ROCK\n";
+        cout<< "User wins! Paper wraps rock\n";
+        return 0;
+    }
+    else if ((random == 1) && (choice == 3)) {
+        cout<< "Player chose: SCISSORS\n";
+        cout<< "computer chose: ROCK\n";
+        cout<< "User lost! Rock smashes scissors\n";
+        return 0;
+    }
+    
+    if ((random == 2) && (choice == 1)) {
+        cout<< "Player chose: ROCK\n";
+        cout<< "computer chose: PAPER\n";
+        cout<< "User lost! Paper wraps rock\n";
+        return 0;
+    }
+    while ((random == 2) && (choice == 2)) {
+        cout<< "Player chose: PAPER\n";
+        cout<< "computer chose: PAPER\n";
+        cout<< "It's a tie! Play again!\n";
+        cin>> choice;
+        play_again += 1;
+        std::cout<< play_again << endl;
+    }
+    if ((random == 2) && (choice == 3)) {
+        cout<< "Player chose: SCISSORS\n";
+        cout<< "computer chose: PAPER\n";
+        cout<< "User wins! Scissors cut paper\n";
+        return 0;
+    }
+    
+    if ((random == 3) && (choice == 1)) {
+        cout<< "Player chose: ROCK\n";
+        cout<< "computer chose: SCISSORS\n";
+        cout<< "User wins! Rock smashes scissors\n";
+        return 0;
+    }
+    else if ((random == 3) && (choice == 2)) {
+        cout<< "Player chose: PAPER\n";
+        cout<< "computer chose: SCISSORS\n";
+        cout<< "User lost! Scissors cut paper\n";
+        return 0;
+    }
+    while ((random = 3) && (choice == 3)) {
+        cout<< "Player chose: SCISSORS\n";
+        cout<< "computer chose: SCISSORS\n";
+        cout<< "It's a tie! Play again!\n";
+        cin>> choice;
+        play_again += 1;
+        std::cout<< play_again << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
